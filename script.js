@@ -13,8 +13,8 @@ console.log(`Перетворене значення в метрах: ${convertS
 Функція повинна повернути строку з датою в одному з двох форматів: "04.07" "04.07.1996"*/
 
 function dateMaker(d, m, y){
-	let dateValue = d + '.' + m + '.' + y;
-	if (y === undefined) { dateValue = d + '.' + m; }
+	let dateValue = d + '.' + m;
+	if (y) { dateValue +=  + '.' + y; }
 	return dateValue;
 }
 
@@ -45,6 +45,8 @@ function типДаних(Ї){
 		return 'строка';
 	} else if (Ї === Infinity) {
 		return 'безкінечність';
+	} else if (isNaN(Ї)) {
+		return 'не число!';
 	} else if (typeof(Ї) === 'number') {
 		return 'число';
 	} else if (Ї === null) {
@@ -53,7 +55,7 @@ function типДаних(Ї){
 		return "об'єкт";
 	}	else if (typeof(Ї) === 'function') {
 		return "функція";
-	}
+	} 
 	
 }
 
